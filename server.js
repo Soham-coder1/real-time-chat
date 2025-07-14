@@ -33,10 +33,7 @@ app.use(express.static(path.join(__dirname, 'chat')));
 // Users store (Set for uniqueness)
 const users = new Set();
 
-
-app.get("/style.css",(req,res)=>{ res.sendFile(__dirname+"/style.css")})
 // Login route
-app.get("/",(req,res)=>{ res.sendFile(__dirname+"/index.html")})
 app.post('/login', (req, res) => {
     const { username } = req.body;
 
