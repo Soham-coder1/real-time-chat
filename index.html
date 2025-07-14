@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Chat App</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>Luxury Real-Time Chat</header>
+
+  <div class="container">
+    <!-- Join Form -->
+    <div class="join-form" id="join-container">
+      <h2>Join the Chat</h2>
+      <form id="join-form">
+        <div class="form-group">
+          <label for="username">Name</label>
+          <input type="text" id="username" required placeholder="Enter your name"/>
+        </div>
+        <button type="submit" class="btn">Enter Chat</button>
+      </form>
+    </div>
+
+    <!-- Chat Container -->
+    <div class="chat-container" id="chat-container" style="display: none;">
+      <div class="chat-header">
+        <h3>General Chat</h3>
+        <div class="online-count" id="online-count">0 online</div>
+        <button class="btn" id="logout-button">Logout</button>
+      </div>
+
+      <div class="chat-messages" id="chat-messages"></div>
+
+      <div class="chat-input">
+        <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+        <button class="btn" id="send-button">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="notification-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-software-interface-start-2571.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Socket.IO -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="code.js"></script>
+</body>
+</html>
