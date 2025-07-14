@@ -1,3 +1,4 @@
+
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
@@ -7,7 +8,7 @@ const app = express();
 
 const server = http.createServer(app);
 const io = socketIo(server);
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 
 // Session middleware
 const sessionMiddleware = session({
@@ -51,8 +52,6 @@ app.post('/login', (req, res) => {
 });
 
 // Logout route
-app.get("/style.css",(req,res)=>{ res.sendFile(__dirname+"/style.css")})
-app.get("/",(req,res)=>{ res.sendFile(__dirname+"/index.html")})
 app.post('/logout', (req, res) => {
     const username = req.session.username;
 
@@ -80,7 +79,7 @@ io.on('connection', (socket) => {
         io.emit('online-count', users.size);
     }
 
-        socket.on('new-user', (username) => {
+    socket.on('new-user', (username) => {
         socket.username = username;
         io.emit('user-connected', { username });
         io.emit('online-count', users.size);
