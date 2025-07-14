@@ -1,28 +1,17 @@
 {
-  "name": "@socket.io/component-emitter",
-  "description": "Event emitter",
-  "version": "3.1.2",
-  "license": "MIT",
-  "devDependencies": {
-    "mocha": "*",
-    "should": "*"
-  },
-  "component": {
-    "scripts": {
-      "emitter/index.js": "index.js"
-    }
-  },
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.js",
-  "types": "./lib/cjs/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/socketio/emitter.git"
-  },
+  "name": "real-time-chat",
+  "version": "1.0.0",
+  "description": "A real-time chat application using Node.js, Express, Socket.IO",
+  "main": "server.js",
   "scripts": {
-    "test": "make test"
+    "start": "node server.js"
   },
-  "files": [
-    "lib/"
-  ]
+  "author": "Soham Bhunia",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "express-session": "^1.17.3",
+    "path": "^0.12.7"
+  }
 }
