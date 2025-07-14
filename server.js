@@ -52,8 +52,8 @@ app.post('/login', (req, res) => {
 });
 
 
-app.get("/",(req,res)=>{ res.sendFlile(__dirname+"/index.html")})
-app.get("/style.css",(req,res)=>{ res.sendFlile(__dirname+"/style.css")})
+app.get("/",(req,res)=>{ res.sendFile(__dirname+"/index.html")})
+app.get("/style.css",(req,res)=>{ res.sendFile(__dirname+"/style.css")})
 // Logout route
 app.post('/logout', (req, res) => {
     const username = req.session.username;
