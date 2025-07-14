@@ -80,6 +80,12 @@ io.on('connection', (socket) => {
         io.emit('online-count', users.size);
     }
 
+        socket.on('new-user', (username) => {
+        socket.username = username;
+        io.emit('user-connected', { username });
+        io.emit('online-count', users.size);
+    });
+
     // Handle incoming messages
     socket.on('send-message', (data) => {
         io.emit('chat-message', data);
