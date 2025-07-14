@@ -1,5 +1,5 @@
 // Connect to Socket.IO server
-const socket = io('https://luxury-chat-app.yourname.repl.co');
+const socket = io();
 // UI Elements
 const joinForm = document.getElementById('join-form');
 const joinContainer = document.getElementById('join-container');
