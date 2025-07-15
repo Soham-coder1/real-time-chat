@@ -1,3 +1,4 @@
+
 /* Base Styles */
 * {
   margin: 0;
@@ -146,6 +147,57 @@ input[type="text"]:focus {
 
 #send-button {
   border-radius: 0 8px 8px 0;
+}
+
+/* Message styles */
+.message {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message.own-message {
+  background-color: #d4af37;
+  color: #0e0e1a;
+  margin-left: auto;
+  text-align: right;
+}
+
+.message.other-message {
+  background-color: #26263a;
+  color: #fff;
+  margin-right: auto;
+}
+
+.message-meta {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.message-sender {
+  font-weight: bold;
+}
+
+.message-time {
+  margin-left: 8px;
+}
+
+.message-text {
+  font-size: 0.95rem;
+}
+
+.notification {
+  text-align: center;
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #333;
+  border-radius: 4px;
+  font-style: italic;
+  opacity: 0.8;
+  font-size: 0.85rem;
 }
 
 /* Responsive */
