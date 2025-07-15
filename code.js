@@ -1,3 +1,4 @@
+
 // Connect to Socket.IO server
 const socket = io();
 // UI Elements
@@ -57,6 +58,13 @@ sendButton.addEventListener('click', () => {
     socket.emit('send-message', msgData);
     messageInput.value = '';
     messageInput.focus();
+});
+
+// --- Enter key to send message ---
+messageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        sendButton.click();
+    }
 });
 
 // --- Logout ---
